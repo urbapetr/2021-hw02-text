@@ -37,10 +37,10 @@ On the other hand the given set of tests is not trying to provide an elaborate t
 
 Note that all this is at your seminar teacher's discretion.
 
-The maximum number of points for this assignment is **10**.
+The maximum number of points for this assignment is **12**.
 
-- **6 points** for passing the tests (attached tests do not guarantee a 100% correctness).
-- **4 points** for correct and clean implementation (evaluated by your class teacher).
+- **7 points** for passing the tests (attached tests do not guarantee a 100% correctness).
+- **5 points** for correct and clean implementation (evaluated by your class teacher).
 
 ### Preconditions
 To successfully implement this assignment you need to know the following
@@ -135,6 +135,13 @@ $ java -jar application.jar --file /example/path/duplicities.txt -u count
 $ java -jar application.jar --file /example/path/duplicities.txt similar
 Distance of 9
 This is a single line! ~= This is another one!
+
+
+# Duplicates and Unique lines together are invalid 
+$ java -jar application.jar --file /example/path/duplicities.txt -d - u
+Distance of 9
+Invalid combination of options was used! # std err
+# Application usage should follow
 ```
 
 
