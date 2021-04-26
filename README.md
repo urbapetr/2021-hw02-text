@@ -30,6 +30,10 @@ In addition to operations the application should also support these command line
 
 For more details about the CLI see the section "Running the application" in this README as well as JUnit tests.
 
+**Hint:** *You want to start by implementing the command line arguments first in order to run the tests. Unfortunately JCommander calls System.exit when it encounters an unknown command line option.*
+
+**Hint 2:** *First homework should give you enough information about how to implement this command line interface.*
+
 ### Evaluation
 Beside functional correctness this assignment is focused on object oriented design.
 This means that the way you structure your program will be an important part of its evaluation.
