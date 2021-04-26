@@ -41,11 +41,13 @@ public final class CommandLine {
      * Shows usage of the application and terminates
      */
     public void showUsage() {
-        showUsage(0);
+        showUsage(-1);
     }
 
     private void showUsage(int status) {
         commander.usage();
-        System.exit(status);
+        if (status >= 0) {
+            System.exit(status);
+        }
     }
 }
