@@ -229,13 +229,17 @@ class ApplicationTest {
     @Test
     void shouldNotAllowDuplicateAndUniqueOptionsTogether() throws URISyntaxException {
         execute(resourcePath("/duplicities.txt"), "-d", "-u");
+        
         assertError(Messages.INVALID_OPTION_COMBINATION);
     }
 
     @Test
     void shouldHandleIOError() throws URISyntaxException {
-        execute("/invalid/path/to/file.txt");
-        assertError(Messages.IO_ERROR);
+        String path = "/invalid/path/to/file.txt";
+        String expectedMessage = String.format(Messages.IO_ERROR, path);
+        execute(path);
+
+        assertError(expectedMessage);
     }
 
     private void testSimilarities(String path, int distance, List<String[]> expected) throws URISyntaxException {
