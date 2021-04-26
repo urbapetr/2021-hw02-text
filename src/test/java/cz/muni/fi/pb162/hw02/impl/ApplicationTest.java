@@ -1,5 +1,6 @@
 package cz.muni.fi.pb162.hw02.impl;
 
+import cz.muni.fi.pb162.hw02.Messages;
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.junit.jupiter.InjectSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
@@ -223,6 +224,18 @@ class ApplicationTest {
                 "/mixed.txt", 1,
                 pairs("This is a single line!", "This is a single line.")
         );
+    }
+
+    @Test
+    void shouldNotAllowDuplicateAndUniqueOptionsTogether() throws URISyntaxException {
+        execute(resourcePath("/duplicities.txt"), "-d", "-u");
+        assertError(Messages.INVALID_OPTION_COMBINATION);
+    }
+
+    @Test
+    void shouldHandleIOError() throws URISyntaxException {
+        execute("/invalid/path/to/file.txt");
+        assertError(Messages.IO_ERROR);
     }
 
     private void testSimilarities(String path, int distance, List<String[]> expected) throws URISyntaxException {
