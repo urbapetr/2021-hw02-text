@@ -1,9 +1,9 @@
 Homework assignment no. 2, Text 
 ====================================
 
-**Publication date:**  April 23, 2021
+**Publication date:**  April 26, 2021
 
-**Submission deadline:** May 9, 2021
+**Submission deadline:** May 10, 2021
 
 General information
 -------------------
